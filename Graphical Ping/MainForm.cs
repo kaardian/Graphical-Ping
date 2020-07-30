@@ -62,11 +62,12 @@ namespace Graphical_Ping
         {
             try
             {
-                Config.Seconds = Convert.ToInt32(textBoxSecondsBetweenPing.Text);
+                if (textBoxSecondsBetweenPing.Text.Length > 0)
+                    Config.Seconds = Convert.ToInt32(textBoxSecondsBetweenPing.Text);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Seconds not valid number", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Seconds not a valid number", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
