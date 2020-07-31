@@ -174,7 +174,7 @@ namespace Graphical_Ping
                 }
                 textBoxPingsSent.SetText(PingResults.PacketsSent.ToString());
                 textBoxPacketsLost.SetText(PingResults.PacketsLost.ToString());
-                PingResults.TotalTime = PingResults.TotalTime + pingReply.RoundtripTime;
+                PingResults.TotalTime += pingReply.RoundtripTime;
                 textBoxAveragePing.SetText(PingResults.AverageTime.ToString());
 
                 chartPing.Invoke((Action)delegate {
